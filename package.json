@@ -1,0 +1,20 @@
+{
+  "name": "user_auth_org",
+  "version": "1.0.0",
+  "description": "This project is a simple backend API for user authentication and organisation management built using Node.js, Express, Sequelize ORM, and PostgreSQL. It includes endpoints for user registration, login, and CRUD operations on organisations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utuedey/User_auth_org.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/utuedey/User_auth_org/issues"
+  },
+  "homepage": "https://github.com/utuedey/User_auth_org#readme"
+}

@@ -34,8 +34,8 @@ This project is a simple backend API for user authentication and organisation ma
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/yourrepository.git
-   cd yourrepository
+   git clone https://github.com/utuedey/User_auth_org.git
+   cd User_auth_org
    ```
 
 2. Install dependencies:
