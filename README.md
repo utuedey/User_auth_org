@@ -1,4 +1,3 @@
-```markdown
 # User Authentication & Organisation API
 
 This project is a simple backend API for user authentication and organisation management built using Node.js, Express, Sequelize ORM, and PostgreSQL. It includes endpoints for user registration, login, and CRUD operations on organisations.
