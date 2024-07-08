@@ -12,12 +12,16 @@ app.use(bodyParser.json());
 
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
-app.use('/organisations', organisationRoutes);
+app.use('/api/organisations', organisationRoutes);
 
 const PORT = process.env.PORT || 3000;
 
-sequelize.sync().then(() => {
+if (process.env.NODE_ENV !== 'test') {
+    sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
         console.log(`Server is running on PORT ${PORT}`);
     });
 });
+}
+
+module.exports = app;
