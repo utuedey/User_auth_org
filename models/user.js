@@ -1,7 +1,7 @@
 // User model
 
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/db');
 const bcrypt = require('bcryptjs');
 
 const User = sequelize.define('User', {
@@ -20,7 +20,7 @@ const User = sequelize.define('User', {
         allowNull: false,
     },
     email: {
-        type: DataTypes.email,
+        type: DataTypes.STRING,
         allowNull: false,
         unique: true,
     },

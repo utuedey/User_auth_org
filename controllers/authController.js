@@ -1,4 +1,5 @@
 // Authentication controller
+require('dotenv').config();
 
 const { User, Organisation } = require('../models');
 const jwt = require('jsonwebtoken');
@@ -14,7 +15,7 @@ exports.register = async (req, res) => {
 
         await user.addOrganisation(organisation);
 
-        const token = jwt.sign({ userId: userId }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ userId: user.userId }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
         res.status(201).json({
             status: 'success',
