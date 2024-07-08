@@ -2,14 +2,17 @@
 require('dotenv').config()
 
 const { Sequelize } = require('sequelize');
-const config = require('./config');
+// const config = require('./config');
 
-const env = process.env.NODE_ENV || 'development';
+// const env = process.env.NODE_ENV || 'development';
+const db_url = process.env.DATABASE_URL
+const db_dialect = process.env.DIALECT
 
-const dbConfig = config[env];
+// const dbConfig = config[env];
 
-const sequelize = new Sequelize(dbConfig.url, {
-   dialect: dbConfig.dialect,
+const sequelize = new Sequelize(db_url, {
+   // dialect: dbConfig.dialect,
+   dialect: db_dialect,
 });
 
 module.exports = sequelize;
