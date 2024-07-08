@@ -45,20 +45,23 @@ exports.login = async (req, res) => {
         const { email, password } = req.body;
         const user = await User.findOne({ where: { email }});
 
-        if (user & (await bcrypt.compare(password, user.password))) {
-            const token = jwt.sign({ userId: user.userId }, JWT_SECRET, {expiresIn: '1h'});
+        if (user && (await bcrypt.compare(password, user.password))) {
+            const token = jwt.sign({ userId: user.userId }, process.env.JWT_SECRET, {expiresIn: '1h'});
 
             res.status(200).json({
                 status: 'success',
                 message: 'Login successful',
                 data: {
-                    userId: user.userId,
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    email: user.email,
-                    phone: user.phone,
+                    acessToken: token,
+                    user: {
+                        userId: user.userId,
+                        firstName: user.firstName,
+                        lastName: user.lastName,
+                        email: user.email,
+                        phone: user.phone,
                 },
-            })
+            },
+            });
         } else {
             res.status(401).json({
                 status: 'Bad request',

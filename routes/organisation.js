@@ -14,7 +14,7 @@ const router = express.Router();
 
 router.get('/', authMiddleware, getAllOrganisations);
 router.get('/:orgId', authMiddleware, getOrganisationById);
-router.get('/', authMiddleware, createOrganisation);
-router.get('/:orgId/addUser', authMiddleware, addUserToOrganisation);
+router.post('/', authMiddleware, createOrganisation);
+router.post('/:orgId/addUser', authMiddleware, addUserToOrganisation);
 
 module.exports = router;
